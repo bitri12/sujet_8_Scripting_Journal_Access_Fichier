@@ -1,5 +1,5 @@
 #!/bin/bash
 
-menu(){
-    
+menu() {
+    echo "menu"
 }

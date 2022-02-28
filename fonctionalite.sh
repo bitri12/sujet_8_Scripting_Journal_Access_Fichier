@@ -12,24 +12,24 @@ version() {
     cat version.txt
 }
 
-AfficheFile(){
-
+AfficheFile() {
+    echo "Affiche File"
 }
 AfficheDirectory() {
-
+    echo "Affiche Directory"
 }
 
 NB() {
-
+    echo "NB"
 }
 
 DirectoryUser(){
-
+    echo "Directory User"
 }
 dateAcess() {
-
- }
+    echo "dateAccess"
+}
 
  stat() {
-
+     echo "stat"
  }
