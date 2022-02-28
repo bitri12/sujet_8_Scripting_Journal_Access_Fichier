@@ -4,13 +4,16 @@ source menu.sh
 source menu_graphique.sh
 
 if [ $# -ge 1 ]; then
-   if [ $1 == "-m" ]; then
-        menu;
-    elif [ $1 == "-h" ]; then
-        help;
-    elif [ $1 == "-v" ]; then
-        version;
-    fi
+   while getopts "hvmg" var
+   do
+        case $var in
+            h) help ;;
+            v) version ;;
+            m) menu ;;
+            g) echo "en cours de preparation" ;;
+            *) showusage ;;
+            esac
+   done
 else
     showusage;
 fi
