@@ -13,23 +13,23 @@ version() {
 }
 
 AfficheFile() {
-    return 0
+     ls -l $OPTARG | grep -v '^d' > ./logs/${OPTARG}_files
 }
 AfficheDirectory() {
-    echo "Affiche Directory"
+     ls -l $OPTARG | grep '^d' > ./logs/${OPTARG}_directories
 }
 
 NB() {
-    echo "Le nombre de fichier dans le dossier est " >> ./logs/${OPTARG}_count
+    echo "Le nombre de fichier dans le dossier est " > ./logs/${OPTARG}_count
     ls $OPTARG | wc -l >> ./logs/${OPTARG}_count
 }
 
 DirectoryUser(){
- #  $(stat -c '%U' $OPTARG) >>
- return 0
+    ls -l $OPTARG | cut -d'' -f3 > ./logs/${OPTARG}_owner
 }
 dateAcess() {
-    return 0
+    echo "Derniere d'access du fichier $OPTARG a ete effectuer le " > ./logs/${OPTARG}_date_Journal 
+    $OPTARG >> ./logs/${OPTARG}_date_Journal
 }
 
 datemodif() {

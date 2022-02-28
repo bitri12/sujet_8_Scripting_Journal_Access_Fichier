@@ -9,7 +9,7 @@ if [ $# -ge 1 ]; then
         case $var in
             h) help ;;
             v) version ;;
-            m) NB ;;
+            m) AfficheDirectory ;;
             g) menu_graphique ;;
             *) showusage ;;
             esac
