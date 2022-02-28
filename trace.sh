@@ -3,7 +3,7 @@ source ./includes/fonctionalite.sh
 source ./includes/menu.sh
 source ./includes/menu_graphique.sh
 
-if [ $# -ge 1 ]; then
+if [ $# -eq 1 ]; then
    while getopts "hvmg" var
    do
         case $var in
