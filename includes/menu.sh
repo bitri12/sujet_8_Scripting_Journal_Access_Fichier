@@ -5,7 +5,7 @@ menu() {
     do
         echo "--------- Menu --------"
         echo "0) Quitter le Programme"
-        echo "1)"
+        echo "1) "
         echo "2)"
         echo "3)"
         echo "4)"

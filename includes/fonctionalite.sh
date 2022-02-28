@@ -13,21 +13,27 @@ version() {
 }
 
 AfficheFile() {
-    echo "Affiche File"
+    
+
 }
 AfficheDirectory() {
     echo "Affiche Directory"
 }
 
 NB() {
-    echo "NB"
+    wc $OPTARG
 }
 
 DirectoryUser(){
     echo "Directory User"
 }
 dateAcess() {
-    echo "dateAccess"
+    return 0
+}
+
+datemodif() {
+    echo "Derniere Modification le " >> ./logs/$OPTARG._date_journal
+    date -r $OPTARG >> ./logs/$OPTARG._date_journal
 }
 
  stat() {

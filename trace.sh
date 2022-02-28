@@ -3,13 +3,13 @@ source includes/fonctionalite.sh
 source includes/menu.sh
 source includes/menu_graphique.sh
 
-if [ $# -eq 1 ]; then
-   while getopts "hvmg" var
+if [ $# -ge 1 ]; then
+   while getopts "hvm:g" var
    do
         case $var in
             h) help ;;
             v) version ;;
-            m) menu ;;
+            m) dateAcess ;;
             g) menu_graphique ;;
             *) showusage ;;
             esac
