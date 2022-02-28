@@ -10,7 +10,7 @@ if [ $# -ge 1 ]; then
             h) help ;;
             v) version ;;
             m) menu ;;
-            g) echo "en cours de preparation" ;;
+            g) menu_graphique ;;
             *) showusage ;;
             esac
    done
