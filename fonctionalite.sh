@@ -11,3 +11,25 @@ help(){
 version() {
     cat version.txt
 }
+
+AfficheFile(){
+
+}
+AfficheDirectory() {
+
+}
+
+NB() {
+
+}
+
+DirectoryUser(){
+
+}
+dateAcess() {
+
+ }
+
+ stat() {
+
+ }
