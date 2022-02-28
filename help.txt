@@ -1,0 +1,5 @@
+usage de la commande : ./trace.sh [argument] [Nom fichier]
+-h : Permet d'afficher ce menu
+-g : Permet de lancer une interface graphique
+-v : Permet d'afficher le nom des auteurs et la version du code
+-m : permet d'afficher un menu textuelle
