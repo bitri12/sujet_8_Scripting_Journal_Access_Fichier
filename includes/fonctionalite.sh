@@ -5,11 +5,11 @@ showusage(){
 }
 
 help(){
-    cat help.txt
+    cat ./textfiles/help.txt
 }
 
 version() {
-    cat version.txt
+    cat ./textfiles/version.txt
 }
 
 AfficheFile() {
