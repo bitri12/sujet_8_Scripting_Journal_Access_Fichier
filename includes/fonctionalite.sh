@@ -13,27 +13,28 @@ version() {
 }
 
 AfficheFile() {
-    
-
+    return 0
 }
 AfficheDirectory() {
     echo "Affiche Directory"
 }
 
 NB() {
-    wc $OPTARG
+    echo "Le nombre de fichier dans le dossier est " >> ./logs/${OPTARG}_count
+    ls $OPTARG | wc -l >> ./logs/${OPTARG}_count
 }
 
 DirectoryUser(){
-    echo "Directory User"
+ #  $(stat -c '%U' $OPTARG) >>
+ return 0
 }
 dateAcess() {
     return 0
 }
 
 datemodif() {
-    echo "Derniere Modification le " >> ./logs/$OPTARG._date_journal
-    date -r $OPTARG >> ./logs/$OPTARG._date_journal
+    echo "Derniere Modification du fichier $OPTARG a ete effectuer le " > ./logs/${OPTARG}_modif_journal 
+    date -r $OPTARG >> ./logs/${OPTARG}_modif_journal
 }
 
  stat() {
