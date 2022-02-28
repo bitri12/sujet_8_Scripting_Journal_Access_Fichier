@@ -1,5 +1,5 @@
 Classe : 2A2
 Auteurs :
     - Othman Bitri
-    - Mouhamed Zrig
+    - Mohamed Zrig
 Version : 0.0.1
