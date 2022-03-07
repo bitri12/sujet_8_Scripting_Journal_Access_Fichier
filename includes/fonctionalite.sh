@@ -28,12 +28,12 @@ DirectoryUser(){
     ls -l $OPTARG | cut -d'' -f3 > ./logs/${OPTARG}_owner
 }
 dateAcess() {
-    echo "Derniere d'access du fichier $OPTARG a ete effectuer le " > ./logs/${OPTARG}_date_Journal 
-    $OPTARG >> ./logs/${OPTARG}_date_Journal
+  echo "Derniere d'access du fichier $OPTARG a ete effectuer le " > ./logs/${OPTARG}_date_Journal
+  stat $OPTARG | grep -i Accès | grep -i +0100 >> ./logs/${OPTARG}_date_Journal
 }
 
 datemodif() {
-    echo "Derniere Modification du fichier $OPTARG a ete effectuer le " > ./logs/${OPTARG}_modif_journal 
+    echo "Derniere Modification du fichier $OPTARG a ete effectuer le " > ./logs/${OPTARG}_modif_journal
     date -r $OPTARG >> ./logs/${OPTARG}_modif_journal
 }
 
