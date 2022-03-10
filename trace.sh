@@ -4,7 +4,9 @@ sanitize_choice(){
         echo $1 | cut -d '|' -f2 | xargs basename
 }
 menu_graphique() {
-    retour=$(yad --title="Menu graphique" --width 800 --height 200 --text-align="center" --list --radiolist --column="Sélectionné" --column="numero" --column="Option" True "0" "Quiter" False "1" "AfficheFile" False "2" "AfficheDirectory" False "3" "NB" False "4" "DirectoryUser" False "5" "dateAcess" False "6" "dateModif" False "7" "stat")
+    while true
+    do
+    retour=$(yad --escape-ok --center --title="Menu graphique" --width 800 --height 300 --text-align="center" --list --radiolist --column="Sélectionné" --column="numero" --column="Option" True "0" "Quiter" False "1" "AfficheFile" False "2" "AfficheDirectory" False "3" "NB" False "4" "DirectoryUser" False "5" "dateAcess" False "6" "dateModif" False "7" "stat")
     choix=$(sanitize_choice $retour)
     case $choix in
         0) echo "Aurevoir !" ;exit 0;;
@@ -16,6 +18,7 @@ menu_graphique() {
         6) datemodif;;
         7) stat;;
     esac
+    done
 }
 
 menu() {
@@ -31,6 +34,7 @@ menu() {
     echo "5) dateAcess"
     echo "6) datemodif"
     echo "7) stat"
+    echo "----------------------"
     read -p "Option : " choix
        case $choix in
             0) echo "Aurevoir !" ;exit 0;;
@@ -47,8 +51,7 @@ menu() {
     return 0
 }
 
-if [ $# -ge 1 ]; then
-   while getopts "hvm:g" var
+while getopts "hvm:g:" var
    do
         case $var in
             h) help ;;
@@ -57,9 +60,4 @@ if [ $# -ge 1 ]; then
             g) menu_graphique ;;
             *) showusage ;;
             esac
-   done
-else
-    showusage;
-fi
-
-
+done
